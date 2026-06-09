@@ -337,7 +337,11 @@ export default function Home() {
     name="_subject"
     value="Nauja užklausa iš Skiferhus"
   />
-
+<input
+  type="hidden"
+  name="_template"
+  value="table"
+/>
   <input
     type="hidden"
     name="_captcha"
