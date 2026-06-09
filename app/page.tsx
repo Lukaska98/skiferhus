@@ -328,50 +328,59 @@ export default function Home() {
     </div>
 
   <form
-  action="https://formsubmit.co/post@skiferhus.no"
+  action="https://formsubmit.co/el/muzuku"
   method="POST"
   className="space-y-4"
 >
-   <input
-  type="text"
-  name="name"
-  placeholder="Navn"
-  className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
-/>
+  <input
+    type="hidden"
+    name="_subject"
+    value="Nauja užklausa iš Skiferhus"
+  />
 
-<input
-  type="email"
-  name="email"
-  placeholder="E-post"
-  className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
-/>
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false"
+  />
 
-<textarea
-  name="message"
-  rows={5}
-  placeholder="Melding"
-  className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
-/>
-  
-<input
-  type="hidden"
-  name="_subject"
-  value="Nauja užklausa iš Skiferhus"
-/>
+  <input
+    type="hidden"
+    name="_next"
+    value="https://www.skiferhus.no/takk"
+  />
 
-<input
-  type="hidden"
-  name="_captcha"
-  value="false"
-/>
-      <button
-        type="submit"
-        className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
-      >
-        Send forespørsel
-      </button>
+  <input
+    type="text"
+    name="name"
+    placeholder="Navn"
+    required
+    className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
+  />
 
-    </form>
+  <input
+    type="email"
+    name="email"
+    placeholder="E-post"
+    required
+    className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
+  />
+
+  <textarea
+    name="message"
+    rows={5}
+    placeholder="Melding"
+    required
+    className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
+  />
+
+  <button
+    type="submit"
+    className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
+  >
+    Send forespørsel
+  </button>
+</form>
 
   </div>
 </section>
