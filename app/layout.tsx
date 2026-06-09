@@ -18,7 +18,6 @@ export const metadata = {
   description: "Eksklusive løsninger i skifer og naturstein.",
 };
 
-import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
   children,

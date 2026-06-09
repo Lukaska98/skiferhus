@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,12 +11,14 @@ export default function Home() {
       <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
-         <Image
-  src="/logo.svg"
-  alt="Skiferhus"
-  width={300}
-  height={70}
-/>
+        <Link href="/">
+  <Image
+    src="/logo.svg"
+    alt="Skiferhus"
+    width={220}
+    height={60}
+  />
+</Link>
 
           <nav className="hidden md:flex gap-8 text-sm uppercase">
             <a href="#hjem">Hjem</a>            
@@ -62,7 +66,7 @@ export default function Home() {
               href="#galleri"
               className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
             >
-              Se galeriet
+              Se galleriet
             </a>
 
             <a
@@ -174,23 +178,60 @@ export default function Home() {
 
         <div className="grid md:grid-cols-3 gap-6">
 
-          <div className="relative h-[420px] overflow-hidden rounded-xl group">
+         <Link href="/galleri/skifertak">
+  <div className="relative h-[420px] overflow-hidden rounded-xl group cursor-pointer">
 
-            <Image
-              src="/images/roof.jpg"
-              alt="Skifertak"
-              fill
-              className="object-cover group-hover:scale-110 transition duration-700"
-            />
+    <Image
+      src="/images/roof.jpg"
+      alt="Skifertak"
+      fill
+      className="object-cover group-hover:scale-110 transition duration-700"
+    />
 
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h3 className="text-3xl font-bold">
-                Skifertak
-              </h3>
-            </div>
+    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <h3 className="text-3xl font-bold">
+        Skifertak
+      </h3>
+    </div>
 
-          </div>
+  </div>
+</Link>
+<Link href="/galleri/fasader">
+  <div className="relative h-[420px] overflow-hidden rounded-xl group">
 
+    <Image
+      src="/images/facade.jpg"
+      alt="Fasader"
+      fill
+      className="object-cover group-hover:scale-110 transition duration-700"
+    />
+
+    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <h3 className="text-3xl font-bold">
+        Fasader
+      </h3>
+    </div>
+
+  </div>
+</Link>
+<Link href="/galleri/uteomrader">
+  <div className="relative h-[420px] overflow-hidden rounded-xl group">
+
+    <Image
+      src="/images/terrace.jpg"
+      alt="Uteområder"
+      fill
+      className="object-cover group-hover:scale-110 transition duration-700"
+    />
+
+    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <h3 className="text-3xl font-bold">
+        Uteområder
+      </h3>
+    </div>
+
+  </div>
+</Link>
           <div className="relative h-[420px] overflow-hidden rounded-xl group">
 
             <Image
@@ -221,13 +262,11 @@ export default function Home() {
               <h3 className="text-3xl font-bold">
                 Uteområder
               </h3>
-            </div>
-
           </div>
-
         </div>
-
+        </div>
       </section>
+
 {/* HVORFOR VELGE OSS */}
 
 <section className="py-24 bg-zinc-950">
