@@ -232,38 +232,7 @@ export default function Home() {
 
   </div>
 </Link>
-          <div className="relative h-[420px] overflow-hidden rounded-xl group">
-
-            <Image
-              src="/images/facade.jpg"
-              alt="Fasader"
-              fill
-              className="object-cover group-hover:scale-110 transition duration-700"
-            />
-
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h3 className="text-3xl font-bold">
-                Fasader
-              </h3>
-            </div>
-
-          </div>
-
-          <div className="relative h-[420px] overflow-hidden rounded-xl group">
-
-            <Image
-              src="/images/terrace.jpg"
-              alt="Uteområder"
-              fill
-              className="object-cover group-hover:scale-110 transition duration-700"
-            />
-
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <h3 className="text-3xl font-bold">
-                Uteområder
-              </h3>
-          </div>
-        </div>
+          
         </div>
       </section>
 
