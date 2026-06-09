@@ -347,7 +347,7 @@ export default function Home() {
   <input
     type="hidden"
     name="_next"
-    value="https://www.skiferhus.no/takk"
+    value="https://skiferhus.no/takk"
   />
 
   <input
