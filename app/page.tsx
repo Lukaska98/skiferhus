@@ -327,8 +327,8 @@ export default function Home() {
 
     </div>
 
-  <form
-  action="https://formsubmit.co/el/muzuku"
+<form
+  action="https://formsubmit.co/post@skiferhus.no"
   method="POST"
   className="space-y-4"
 >
