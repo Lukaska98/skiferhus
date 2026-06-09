@@ -327,26 +327,40 @@ export default function Home() {
 
     </div>
 
-    <form className="space-y-4">
+    <form
+  action="https://formsubmit.co/post@skiferhus.no"
+  method="POST"
+  className="space-y-4"
+>
 
       <input
-        type="text"
-        placeholder="Navn"
-        className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
-      />
+  type="text"
+  name="name"
+  placeholder="Navn"
+/>
 
-      <input
-        type="email"
-        placeholder="E-post"
-        className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
-      />
+<input
+  type="email"
+  name="email"
+  placeholder="E-post"
+/>
 
-      <textarea
-        rows={5}
-        placeholder="Melding"
-        className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
-      />
+<textarea
+  name="message"
+  placeholder="Melding"
+/>
+  
+<input
+  type="hidden"
+  name="_subject"
+  value="Nauja užklausa iš Skiferhus"
+/>
 
+<input
+  type="hidden"
+  name="_captcha"
+  value="false"
+/>
       <button
         type="submit"
         className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
