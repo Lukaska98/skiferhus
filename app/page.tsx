@@ -327,27 +327,30 @@ export default function Home() {
 
     </div>
 
-    <form
+  <form
   action="https://formsubmit.co/post@skiferhus.no"
   method="POST"
   className="space-y-4"
 >
-
-      <input
+   <input
   type="text"
   name="name"
   placeholder="Navn"
+  className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
 />
 
 <input
   type="email"
   name="email"
   placeholder="E-post"
+  className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
 />
 
 <textarea
   name="message"
+  rows={5}
   placeholder="Melding"
+  className="w-full p-4 rounded bg-zinc-900 border border-zinc-700"
 />
   
 <input
