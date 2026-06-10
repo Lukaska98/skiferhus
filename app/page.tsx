@@ -20,11 +20,22 @@ export default function Home() {
   />
 </Link>
 
-          <nav className="hidden md:flex gap-8 text-sm uppercase">
-            <a href="#hjem">Hjem</a>            
-            <a href="#tjenester">Tjenester</a>          
-            <a href="#kontakt">Kontakt</a>
-          </nav>
+<nav className="hidden md:flex gap-8 text-sm uppercase">
+  <a href="#hjem">Hjem</a>
+  <a href="#tjenester">Tjenester</a>
+
+  <Link href="/produkter">
+    Produkter
+  </Link>
+
+  <a href="#galleri">
+    Inspirasjon
+  </a>
+
+  <a href="#kontakt">
+    Kontakt
+  </a>
+</nav>
 
         </div>
       </header>
@@ -62,19 +73,18 @@ export default function Home() {
 
           <div className="flex justify-center gap-4">
 
-            <a
-              href="#galleri"
-              className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
-            >
-              Se galleriet
-            </a>
-
-            <a
-              href="#kontakt"
-              className="border border-white px-8 py-4 rounded-lg"
-            >
-              Kontakt oss
-            </a>
+<a
+  href="#galleri"
+  className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
+>
+  Se inspirasjon
+  </a>
+<Link
+  href="/produkter"
+  className="border border-white px-8 py-4 rounded-lg"
+>
+  Se produkter
+</Link>
 
           </div>
 
@@ -125,7 +135,7 @@ export default function Home() {
         </h2>
 
         <p className="text-zinc-400 text-xl leading-8">
-          Vi leverer eksklusive løsninger innen skifertak,
+          Vi leverer eksklusive løsninger innen takskifer,
           natursteinsfasader og uteområder over hele Norge.
           Med fokus på kvalitet, detaljer og holdbarhet skaper
           vi prosjekter som varer i generasjoner.
@@ -147,12 +157,12 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
 
           <div className="border border-zinc-800 p-8 rounded-xl hover:border-white hover:-translate-y-2 transition duration-300">
-            <h3 className="text-3xl font-bold mb-4">Skifertak</h3>
+            <h3 className="text-3xl font-bold mb-4">Takskifer</h3>
             <p>Eksklusive og holdbare takløsninger.</p>
           </div>
 
           <div className="border border-zinc-800 p-8 rounded-xl hover:border-white hover:-translate-y-2 transition duration-300">
-            <h3 className="text-3xl font-bold mb-4">Skiferfasader</h3>
+            <h3 className="text-3xl font-bold mb-4">Fasadeskifer</h3>
             <p>Moderne og tidløse fasadeløsninger.</p>
           </div>
 
@@ -165,76 +175,77 @@ export default function Home() {
 
       </section>
 
-      {/* GALLERI */}
+      {/* INSPIRASJON */}
 
       <section
-        id="galleri"
-        className="max-w-7xl mx-auto px-6 py-24"
-      >
+  id="galleri"
+  className="max-w-7xl mx-auto px-6 py-24"
+>
+  <h2 className="text-4xl font-bold mb-12 text-center">
+    Inspirasjon
+  </h2>
 
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          Galleri
-        </h2>
+  <div className="grid md:grid-cols-3 gap-6">
 
-        <div className="grid md:grid-cols-3 gap-6">
+    <Link href="/produkter/takskifer-rustikk">
+      <div className="relative h-[420px] overflow-hidden rounded-xl group cursor-pointer">
 
-         <Link href="/galleri/skifertak">
-  <div className="relative h-[420px] overflow-hidden rounded-xl group cursor-pointer">
+        <Image
+          src="/images/roof.jpg"
+          alt="Takskifer"
+          fill
+          className="object-cover group-hover:scale-110 transition duration-700"
+        />
 
-    <Image
-      src="/images/roof.jpg"
-      alt="Skifertak"
-      fill
-      className="object-cover group-hover:scale-110 transition duration-700"
-    />
-
-    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-      <h3 className="text-3xl font-bold">
-        Skifertak
-      </h3>
-    </div>
-
-  </div>
-</Link>
-<Link href="/galleri/fasader">
-  <div className="relative h-[420px] overflow-hidden rounded-xl group">
-
-    <Image
-      src="/images/facade.jpg"
-      alt="Fasader"
-      fill
-      className="object-cover group-hover:scale-110 transition duration-700"
-    />
-
-    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-      <h3 className="text-3xl font-bold">
-        Fasader
-      </h3>
-    </div>
-
-  </div>
-</Link>
-<Link href="/galleri/uteomrader">
-  <div className="relative h-[420px] overflow-hidden rounded-xl group">
-
-    <Image
-      src="/images/terrace.jpg"
-      alt="Uteområder"
-      fill
-      className="object-cover group-hover:scale-110 transition duration-700"
-    />
-
-    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-      <h3 className="text-3xl font-bold">
-        Uteområder
-      </h3>
-    </div>
-
-  </div>
-</Link>
-          
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h3 className="text-3xl font-bold">
+            Takskifer
+          </h3>
         </div>
-      </section>
+
+      </div>
+    </Link>
+
+    <Link href="/produkter/fasadeskifer-gra">
+      <div className="relative h-[420px] overflow-hidden rounded-xl group">
+
+        <Image
+          src="/images/facade.jpg"
+          alt="Fasadeskifer"
+          fill
+          className="object-cover group-hover:scale-110 transition duration-700"
+        />
+
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h3 className="text-3xl font-bold">
+            Fasadeskifer
+          </h3>
+        </div>
+
+      </div>
+    </Link>
+
+    <Link href="/produkter/terasseskifer">
+      <div className="relative h-[420px] overflow-hidden rounded-xl group">
+
+        <Image
+          src="/images/terrace.jpg"
+          alt="Terrasseskifer"
+          fill
+          className="object-cover group-hover:scale-110 transition duration-700"
+        />
+
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <h3 className="text-3xl font-bold">
+            Terrasseskifer
+          </h3>
+        </div>
+
+      </div>
+    </Link>
+
+  </div>
+</section>
 
 {/* HVORFOR VELGE OSS */}
 
@@ -410,9 +421,9 @@ export default function Home() {
             </h3>
 
             <ul className="space-y-2 text-gray-400">
-<li>Skifertak</li>
-<li>Skiferfasader</li>
-<li>Uteområder</li>
+<li>Takskifer</li>
+<li>Fasadeskifer</li>
+<li>Terrasseskifer</li>
             </ul>
           </div>
 
