@@ -31,7 +31,11 @@ export default async function KontaktPage({
           name="_subject"
           value="Ny forespørsel fra Skiferhus"
         />
-
+<input
+  type="hidden"
+  name="_template"
+  value="table"
+/>
         <input
           type="hidden"
           name="_captcha"
