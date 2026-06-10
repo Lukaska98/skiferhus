@@ -65,16 +65,7 @@ export default async function KontaktPage({
           className="w-full border border-zinc-700 rounded-lg p-3"
         />
 
-     <input
-  type="hidden"
-  name="produkt"
-  value={produkt}
-/>
-
-<div className="border border-zinc-700 rounded-lg p-3">
-  <span className="text-zinc-400">Produkt:</span>
-  <div className="font-medium">{produkt}</div>
-</div>
+    
 
         <textarea
           name="message"
