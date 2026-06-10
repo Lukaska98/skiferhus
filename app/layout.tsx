@@ -13,11 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Skiferhus",
-  description: "Eksklusive løsninger i skifer og naturstein.",
-};
+  description:
+    "Eksklusive skifer- og natursteinløsninger for hele Norge. Skifertak, fasader og uteområder.",
 
+  openGraph: {
+    title: "Skiferhus",
+    description:
+      "Eksklusive skifer- og natursteinløsninger for hele Norge.",
+    images: ["/images/terrace.jpg"],
+  },
+};
 
 export default function RootLayout({
   children,
@@ -26,7 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="no">
-      <body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable}`}
+      >
         {children}
         <Analytics />
       </body>
