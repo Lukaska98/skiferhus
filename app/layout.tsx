@@ -15,16 +15,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skiferhus",
+  title: {
+    default: "Skiferhus | Skifertak, fasader og uteområder",
+    template: "%s | Skiferhus",
+  },
   description:
     "Eksklusive skifer- og natursteinløsninger for hele Norge. Skifertak, fasader og uteområder.",
-
-  openGraph: {
-    title: "Skiferhus",
-    description:
-      "Eksklusive skifer- og natursteinløsninger for hele Norge.",
-    images: ["/images/terrace.jpg"],
-  },
 };
 
 export default function RootLayout({
