@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import LeadEvent from "@/components/LeadEvent";
 
 export default function TakkPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-20">
-
+<LeadEvent />
       <div className="flex justify-center mb-16">
         <Link href="/">
           <Image
