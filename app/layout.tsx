@@ -20,8 +20,28 @@ export const metadata: Metadata = {
     default: "Skiferhus | Skifertak, fasader og uteområder",
     template: "%s | Skiferhus",
   },
+
   description:
     "Eksklusive skifer- og natursteinløsninger for hele Norge. Skifertak, fasader og uteområder.",
+
+  openGraph: {
+    title: "Skiferhus",
+    description:
+      "Eksklusive skifer- og natursteinløsninger for hele Norge.",
+    url: "https://skiferhus.no",
+    siteName: "Skiferhus",
+    locale: "no_NO",
+    type: "website",
+
+    images: [
+      {
+        url: "https://skiferhus.no/images/terrace.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Skiferhus",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
