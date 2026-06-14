@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "public/og-image.png",
+        url: "https://www.skiferhus.no/og-image.png",
         width: 1200,
         height: 630,
         alt: "Skiferhus",
