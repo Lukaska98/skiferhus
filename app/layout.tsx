@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import FacebookPixel from "@/components/FacebookPixel";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="no">
+      <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-K6HHSY29DN"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-K6HHSY29DN');
+  `}
+</Script>
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
           >
