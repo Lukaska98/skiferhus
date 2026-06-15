@@ -51,29 +51,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="no">
-      <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-K6HHSY29DN"
-  strategy="afterInteractive"
-/>
+  <html lang="no">
+  <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    
+    <Script
+      src="https://www.googletagmanager.com/gtag/js?id=G-K6HHSY29DN"
+      strategy="afterInteractive"
+    />
 
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K6HHSY29DN');
+      `}
+    </Script>
 
-    gtag('config', 'G-K6HHSY29DN');
-  `}
-</Script>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable}`}
-          >
-            <FacebookPixel />
-        {children}
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <FacebookPixel />
+
+    {children}
+
+    <Analytics />
+    <SpeedInsights />
+
+  </body>
+</html>
   );
 }
