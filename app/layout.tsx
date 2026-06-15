@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://skiferhus.no"),
   title: {
     default: "Skiferhus | Skifertak, fasader og uteområder",
     template: "%s | Skiferhus",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "https://www.skiferhus.no/og-image.png",
+        url: "https://skiferhus.no/og-image.png",
         width: 1200,
         height: 630,
         alt: "Skiferhus",
