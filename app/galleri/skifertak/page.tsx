@@ -30,6 +30,7 @@ export default function SkifertakPage() {
               src="/images/tak1.jpg"
               alt="Skifertak"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -39,6 +40,7 @@ export default function SkifertakPage() {
               src="/images/tak2.jpg"
               alt="Skifertak"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -48,6 +50,7 @@ export default function SkifertakPage() {
               src="/images/tak3.jpg"
               alt="Skifertak"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -57,6 +60,7 @@ export default function SkifertakPage() {
               src="/images/tak4.jpg"
               alt="Skifertak"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>

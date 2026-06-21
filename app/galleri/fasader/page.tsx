@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-
+export const metadata = {
+  title: "Skiferfasader",
+  description:
+    "Eksklusive fasadeløsninger i skifer og naturstein for boliger og næringsbygg.",
+};
 export default function FasaderPage() {
   return (
     
@@ -26,6 +30,7 @@ export default function FasaderPage() {
               src="/images/fasader1.jpg"
               alt="fasader "
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -35,6 +40,7 @@ export default function FasaderPage() {
               src="/images/fasader2.jpg"
               alt="fasader"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -44,6 +50,7 @@ export default function FasaderPage() {
               src="/images/fasader3.jpg"
               alt="fasader"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -53,6 +60,7 @@ export default function FasaderPage() {
               src="/images/fasader4.jpg"
               alt="fasader"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>

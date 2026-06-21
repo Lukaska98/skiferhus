@@ -26,6 +26,7 @@ export default function uteomraderPage() {
               src="/images/uteomrader1.jpg"
               alt="Uteområder"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -35,6 +36,7 @@ export default function uteomraderPage() {
               src="/images/uteomrader2.jpg"
               alt="Uteområder"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -44,6 +46,7 @@ export default function uteomraderPage() {
               src="/images/uteomrader3.jpg"
               alt="Uteområder"
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>
@@ -53,6 +56,7 @@ export default function uteomraderPage() {
               src="/images/uteomrader4.jpg"
               alt="Uteområder  "
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
             />
           </div>

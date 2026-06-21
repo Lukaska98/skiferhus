@@ -17,6 +17,7 @@ export default function Home() {
     alt="Skiferhus"
     width={220}
     height={60}
+    className="h-12 w-auto"
   />
 </Link>
 
@@ -52,6 +53,7 @@ export default function Home() {
           alt="Skifer"
           fill
           priority
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover opacity-50"
         />
 
@@ -212,6 +214,7 @@ export default function Home() {
         <Image
           src="/images/facade.jpg"
           alt="Fasadeskifer"
+          sizes="(max-width: 768px) 100vw, 50vw"
           fill
           className="object-cover group-hover:scale-110 transition duration-700"
         />
