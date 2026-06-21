@@ -12,7 +12,20 @@ export default function TerasseskiferPage() {
       <h1 className="text-4xl font-bold mb-10">
         Terasseskifer
       </h1>
-
+<Link href="/">
+      <Image
+        src="/logo.svg"
+        alt="Skiferhus"
+        width={220}
+        height={60}
+      />
+    </Link>
+ <Link
+      href="/produkter"
+      className="inline-flex items-center gap-2 text-zinc-400 hover:text-white"
+    >
+      ← Til produktoversikt
+    </Link>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProducts.map((product) => (
           <Link
