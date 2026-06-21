@@ -8,24 +8,32 @@ export default function TerasseskiferPage() {
   );
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-10">
-        Terasseskifer
-      </h1>
-<Link href="/">
+ <main className="max-w-7xl mx-auto px-6 py-16">
+
+  <div className="flex items-center justify-between mb-16">
+
+    <Link href="/">
       <Image
         src="/logo.svg"
         alt="Skiferhus"
         width={220}
         height={60}
+        priority
       />
     </Link>
- <Link
+
+    <Link
       href="/produkter"
       className="inline-flex items-center gap-2 text-zinc-400 hover:text-white"
     >
       ← Til produktoversikt
     </Link>
+
+  </div>
+
+  <h1 className="text-4xl font-bold mb-10">
+    Terraseskifer
+  </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProducts.map((product) => (
           <Link
