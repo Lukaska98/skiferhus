@@ -189,7 +189,7 @@ export default function Home() {
 
   <div className="grid md:grid-cols-3 gap-6">
 
-    <Link href="/produkter?category=Takskifer">
+    <Link href="/produkter/takskifer">
       <div className="relative h-[420px] overflow-hidden rounded-xl group cursor-pointer">
 
         <Image
@@ -208,7 +208,7 @@ export default function Home() {
       </div>
     </Link>
 
-       <Link href="/produkter?category=Fasadeskifer">
+       <Link href="/produkter/fasadeskifer">
       <div className="relative h-[420px] overflow-hidden rounded-xl group">
 
         <Image
@@ -228,7 +228,7 @@ export default function Home() {
       </div>
     </Link>
 
-  <Link href="/produkter?category=Terrasseskifer">
+  <Link href="/produkter/terasseskifer">
       <div className="relative h-[420px] overflow-hidden rounded-xl group">
 
         <Image
