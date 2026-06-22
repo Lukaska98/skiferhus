@@ -1,21 +1,51 @@
+import { MetadataRoute } from "next";
 import { naturalStoneGroups, newProductSeries } from "./data/product-series";
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: "https://skiferhus.no" },
+    {
+      url: "https://www.skiferhus.no",
+      lastModified: new Date(),
+    },
 
-    { url: "https://skiferhus.no/produkter" },
+    {
+      url: "https://www.skiferhus.no/produkter",
+      lastModified: new Date(),
+    },
+
     ...naturalStoneGroups.map((group) => ({
-      url: `https://skiferhus.no/produkter/${group.slug}`,
+      url: `https://www.skiferhus.no/produkter/${group.slug}`,
+      lastModified: new Date(),
     })),
-    ...newProductSeries.map((series) => ({
-      url: `https://skiferhus.no/produkter/serier/${series.slug}`,
-    })),
-    { url: "https://skiferhus.no/tjenester" },
-    { url: "https://skiferhus.no/kontakt" },
 
-    { url: "https://skiferhus.no/galleri/skifertak" },
-    { url: "https://skiferhus.no/galleri/fasader" },
-    { url: "https://skiferhus.no/galleri/uteomrader" },
+    ...newProductSeries.map((series) => ({
+      url: `https://www.skiferhus.no/produkter/serier/${series.slug}`,
+      lastModified: new Date(),
+    })),
+
+    {
+      url: "https://www.skiferhus.no/tjenester",
+      lastModified: new Date(),
+    },
+
+    {
+      url: "https://www.skiferhus.no/kontakt",
+      lastModified: new Date(),
+    },
+
+    {
+      url: "https://www.skiferhus.no/galleri/skifertak",
+      lastModified: new Date(),
+    },
+
+    {
+      url: "https://www.skiferhus.no/galleri/fasader",
+      lastModified: new Date(),
+    },
+
+    {
+      url: "https://www.skiferhus.no/galleri/uteomrader",
+      lastModified: new Date(),
+    },
   ];
 }

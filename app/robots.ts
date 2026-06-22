@@ -1,9 +1,11 @@
-export default function robots() {
+import { MetadataRoute } from "next";
+
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://skiferhus.no/sitemap.xml",
+    sitemap: "https://www.skiferhus.no/sitemap.xml",
   };
 }
