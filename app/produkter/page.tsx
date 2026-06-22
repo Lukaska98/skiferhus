@@ -1,15 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "../data/products";
-import { newProductSeries, stounlineCollections } from "../data/product-series";
+import { naturalStoneGroups, newProductSeries } from "../data/product-series";
 
 export default function ProdukterPage() {
-  const stounlineProductCount = products.filter((product) =>
-    stounlineCollections.includes(
-      product.collection as (typeof stounlineCollections)[number]
-    )
-  ).length;
-
   return (
     <main className="max-w-7xl mx-auto px-6 py-16">
       <div className="flex items-center justify-between mb-16">
@@ -37,47 +31,49 @@ export default function ProdukterPage() {
         </p>
         <h1 className="text-4xl md:text-5xl font-bold mb-5">Produktserier</h1>
         <p className="text-lg text-zinc-400 leading-8">
-          Velg en produktserie for å se utvalg og produktinformasjon. Vi
+          Velg en produktgruppe for å se utvalg og produktinformasjon. Vi
           utvider katalogen fortløpende.
         </p>
       </div>
 
-      <section aria-labelledby="stounline-heading" className="mb-20">
-        <h2 id="stounline-heading" className="text-2xl font-semibold mb-7">
-          Våre produktserier
+      <section aria-labelledby="naturstein-heading" className="mb-20">
+        <h2 id="naturstein-heading" className="text-2xl font-semibold mb-7">
+          Natursteingrupper
         </h2>
 
-        <Link
-          href="/produkter/stounline"
-          className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 hover:border-zinc-500 transition"
-        >
-          <div className="grid md:grid-cols-[minmax(0,1fr)_320px]">
-            <div className="p-8 md:p-10 flex flex-col justify-center">
-              <p className="text-sm font-semibold tracking-[0.18em] text-zinc-400 uppercase mb-4">
-                Naturstein
-              </p>
-              <h3 className="text-3xl font-bold mb-4">Stounline</h3>
-              <p className="text-zinc-400 leading-7 max-w-xl">
-                Se hele Stounline-sortimentet samlet på ett sted, inkludert
-                STONELINE og RIO GRANDE.
-              </p>
-              <span className="mt-7 inline-flex items-center gap-2 font-semibold group-hover:gap-3 transition-all">
-                Se {stounlineProductCount} produkter{" "}
-                <span aria-hidden="true">→</span>
-              </span>
-            </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          {naturalStoneGroups.map((group) => {
+            const productCount = products.filter(
+              (product) => product.collection === group.collection
+            ).length;
 
-            <div className="relative min-h-64 md:min-h-full">
-              <Image
-                src="/images/stounline/stounline1.png"
-                alt="Stounline naturstein"
-                fill
-                sizes="(max-width: 768px) 100vw, 320px"
-                className="object-cover opacity-80 group-hover:scale-105 transition duration-500"
-              />
-            </div>
-          </div>
-        </Link>
+            return (
+              <Link
+                key={group.slug}
+                href={`/produkter/${group.slug}`}
+                className="group relative min-h-80 overflow-hidden rounded-2xl border border-zinc-800"
+              >
+                <Image
+                  src={group.image}
+                  alt={group.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover opacity-60 group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-black/55 group-hover:bg-black/40 transition" />
+                <div className="absolute inset-x-0 bottom-0 p-8">
+                  <p className="text-sm font-semibold tracking-[0.18em] text-zinc-300 uppercase mb-3">
+                    Naturstein
+                  </p>
+                  <h2 className="text-3xl font-bold">{group.name}</h2>
+                  <p className="mt-3 text-zinc-200">
+                    {productCount} produkter <span aria-hidden="true">→</span>
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </section>
 
       <section aria-labelledby="new-series-heading">
@@ -107,7 +103,7 @@ export default function ProdukterPage() {
                   aria-hidden="true"
                   className="text-zinc-400 group-hover:translate-x-1 transition"
                 >
-                  ↗
+                  →
                 </span>
               </div>
             </Link>

@@ -1,11 +1,13 @@
-import { newProductSeries } from "./data/product-series";
+import { naturalStoneGroups, newProductSeries } from "./data/product-series";
 
 export default function sitemap() {
   return [
     { url: "https://skiferhus.no" },
 
     { url: "https://skiferhus.no/produkter" },
-    { url: "https://skiferhus.no/produkter/stounline" },
+    ...naturalStoneGroups.map((group) => ({
+      url: `https://skiferhus.no/produkter/${group.slug}`,
+    })),
     ...newProductSeries.map((series) => ({
       url: `https://skiferhus.no/produkter/serier/${series.slug}`,
     })),

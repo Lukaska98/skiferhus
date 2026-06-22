@@ -1,4 +1,28 @@
-export const stounlineCollections = ["STONELINE", "RIO GRANDE"] as const;
+export type NaturalStoneGroup = {
+  slug: string;
+  name: string;
+  collection: string;
+  description: string;
+  image: string;
+};
+
+export const stounlineGroup: NaturalStoneGroup = {
+  slug: "stounline",
+  name: "Stounline",
+  collection: "STONELINE",
+  description: "Et utvalg av naturstein med et moderne og tidløst uttrykk.",
+  image: "/images/stounline/stounline1.png",
+};
+
+export const rioGrandeGroup: NaturalStoneGroup = {
+  slug: "rio-grande",
+  name: "RIO GRANDE",
+  collection: "RIO GRANDE",
+  description: "En egen natursteingruppe med varme farger og levende struktur.",
+ image: "/images/rio-grande/rio-grande.jpg",
+};
+
+export const naturalStoneGroups = [stounlineGroup, rioGrandeGroup];
 
 export const newProductSeries = [
   {
@@ -40,11 +64,6 @@ export const newProductSeries = [
     slug: "slate-lite-fleksibel-stein",
     name: "SLATE LITE fleksibel stein",
     category: "Fasade og interiør",
-  },
-  {
-    slug: "rio-grande-fasadekledning",
-    name: "RIO GRANDE • fasadekledning",
-    category: "Fasade",
   },
   {
     slug: "stounwood-terrace-solid",
