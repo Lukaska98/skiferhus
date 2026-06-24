@@ -2,6 +2,8 @@ import Image from "next/image";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Link from "next/link";
 
+
+
 export default function Home() {
   return (
     <main className="bg-black text-white">
@@ -45,28 +47,28 @@ export default function Home() {
 
       <section
         id="hjem"
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-[85vh] flex items-center justify-center overflow-hidden"
       >
 
         <Image
-          src="/images/terrace.jpg"
+          src="/images/hero-slate.png"
           alt="Skifer"
           fill
           priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover opacity-50"
+          sizes="100vw"
+          className="object-cover"
         />
 
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="relative z-10 text-center max-w-4xl px-6">
 
-          <h1 className="text-7xl md:text-8xl font-bold mb-8">
-            SKIFERHUS
-          </h1>
+<h1 className="text-5xl md:text-7xl font-bold mb-8">
+  Skifer for generasjoner
+</h1>
 
-          <p className="text-2xl mb-6">
-  Eksklusive skifer- og natursteinsløsninger for hele Norge
+<p className="text-xl md:text-2xl mb-6">
+  Takskifer, fasadeskifer og naturstein levert med fokus på kvalitet og håndverk.
 </p>
 
           <p className="text-gray-300 text-lg mb-10">
@@ -76,10 +78,10 @@ export default function Home() {
           <div className="flex justify-center gap-4">
 
 <a
-  href="#galleri"
+  href="#kontakt"
   className="bg-white text-black px-8 py-4 rounded-lg font-semibold"
 >
-  Se inspirasjon
+  Få tilbud
   </a>
 <Link
   href="/produkter"
@@ -99,7 +101,7 @@ export default function Home() {
 
   <div className="grid md:grid-cols-3 gap-8">
 
-    <div className="border border-zinc-800 rounded-xl p-8 text-center">
+    <div className="border rounded-xl p-8 text-center">
       <h3 className="text-3xl font-bold mb-3">
   ✓ Fokus på kvalitet
 </h3>
@@ -108,7 +110,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="border border-zinc-800 rounded-xl p-8 text-center">
+    <div className="border rounded-xl p-8 text-center">
       <h3 className="text-3xl font-bold mb-3">
   🤝 Personlig oppfølging
 </h3>
@@ -117,7 +119,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="border border-zinc-800 rounded-xl p-8 text-center">
+    <div className="border  rounded-xl p-8 text-center">
       <h3 className="text-3xl font-bold mb-3">
   🚚 Levering i hele Norge
 </h3>
@@ -130,186 +132,209 @@ export default function Home() {
 
 </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-45 text-center">
 
-        <h2 className="text-4xl font-bold mb-8">
-          Tradisjon møter moderne håndverk
-        </h2>
+ {/* TJENESTER */}
 
-        <p className="text-zinc-400 text-xl leading-8">
-          Vi leverer eksklusive løsninger innen takskifer,
-          natursteinsfasader og uteområder over hele Norge.
-          Med fokus på kvalitet, detaljer og holdbarhet skaper
-          vi prosjekter som varer i generasjoner.
-        </p>
-
-      </section>
-
-      {/* TJENESTER */}
-
-      <section
-        id="tjenester"
-        className="max-w-7xl mx-auto px-6 py-24"
-      >
-
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          Våre tjenester
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          <div className="border border-zinc-800 p-8 rounded-xl hover:border-white hover:-translate-y-2 transition duration-300">
-            <h3 className="text-3xl font-bold mb-4">Takskifer</h3>
-            <p>Eksklusive og holdbare takløsninger.</p>
-          </div>
-
-          <div className="border border-zinc-800 p-8 rounded-xl hover:border-white hover:-translate-y-2 transition duration-300">
-            <h3 className="text-3xl font-bold mb-4">Fasadeskifer</h3>
-            <p>Moderne og tidløse fasadeløsninger.</p>
-          </div>
-
-          <div className="border border-zinc-800 p-8 rounded-xl hover:border-white hover:-translate-y-2 transition duration-300">
-            <h3 className="text-3xl font-bold mb-4">Uteområder</h3>
-            <p>Terrasser, trapper og naturstein i hage.</p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* INSPIRASJON */}
-
-      <section
-  id="galleri"
+<section
+  id="tjenester"
   className="max-w-7xl mx-auto px-6 py-24"
 >
-  <h2 className="text-4xl font-bold mb-12 text-center">
-    Inspirasjon
+  <h2 className="text-4xl font-bold text-center mb-12">
+    Våre tjenester
   </h2>
 
-  <div className="grid md:grid-cols-3 gap-6">
+  <div className="grid md:grid-cols-3 gap-8">
 
-    <Link href="/produkter/takskifer">
-      <div className="relative h-[420px] overflow-hidden rounded-xl group cursor-pointer">
+    {/* Takskifer */}
+    <div className="border border-zinc-800 rounded-xl overflow-hidden hover:border-white hover:-translate-y-2 transition duration-300">
 
+      <div className="relative h-60">
         <Image
-          src="/images/roof.jpg"
+          src="/images/tak1.jpg"
           alt="Takskifer"
           fill
-          className="object-cover group-hover:scale-110 transition duration-700"
+          sizes="33vw"
+          className="object-cover"
         />
-
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h3 className="text-3xl font-bold">
-            Takskifer
-          </h3>
-        </div>
-
       </div>
-    </Link>
 
-       <Link href="/produkter/fasadeskifer">
-      <div className="relative h-[420px] overflow-hidden rounded-xl group">
-
-        <Image
-          src="/images/facade.jpg"
-          alt="Fasadeskifer"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          fill
-          className="object-cover group-hover:scale-110 transition duration-700"
-        />
-
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h3 className="text-3xl font-bold">
-            Fasadeskifer
-          </h3>
-        </div>
-
-      </div>
-    </Link>
-
-  <Link href="/produkter/terasseskifer">
-      <div className="relative h-[420px] overflow-hidden rounded-xl group">
-
-        <Image
-          src="/images/terrace.jpg"
-          alt="Terrasseskifer"
-          fill
-          className="object-cover group-hover:scale-110 transition duration-700"
-        />
-
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h3 className="text-3xl font-bold">
-            Terrasseskifer
-          </h3>
-        </div>
-
-      </div>
-    </Link>
-
-  </div>
-</section>
-
-{/* HVORFOR VELGE OSS */}
-
-<section className="py-24 bg-zinc-950">
-
-  <div className="max-w-5xl mx-auto px-6 text-center">
-
-    <h2 className="text-4xl font-bold mb-8">
-      Hvorfor velge Skiferhus?
-    </h2>
-
-    <p className="text-zinc-400 max-w-3xl mx-auto mb-16">
-      Vi kombinerer tradisjonelt håndverk med moderne løsninger for å skape
-      varige resultater i skifer og naturstein.
-    </p>
-
-    <div className="grid md:grid-cols-3 gap-10">
-
-      <div className="border border-zinc-800 rounded-xl p-8">
-  <h3 className="text-2xl font-semibold mb-4">
-    Fagkunnskap
-  </h3>
-
-  <p className="text-zinc-400">
-    Solid kompetanse innen skifer og naturstein.
-  </p>
-</div>
-      <div className="border border-zinc-800 rounded-xl p-8">
-        <h3 className="text-2xl font-semibold mb-4">
-          Kvalitet
+      <div className="p-6">
+        <h3 className="text-3xl font-bold mb-4">
+          Takskifer
         </h3>
 
         <p className="text-zinc-400">
-          Materialer og utførelse som er bygget
-          for å vare i generasjoner.
+          Eksklusive og holdbare takløsninger for nye og eksisterende bygg.
         </p>
       </div>
 
-      <div className="border border-zinc-800 rounded-xl p-8">
-        <h3 className="text-2xl font-semibold mb-4">
-          Hele Norge
+    </div>
+
+    {/* Fasadeskifer */}
+    <div className="border border-zinc-800 rounded-xl overflow-hidden hover:border-white hover:-translate-y-2 transition duration-300">
+
+      <div className="relative h-60">
+        <Image
+          src="/images/fasader4.jpg"
+          alt="Fasadeskifer"
+          fill
+          sizes="33vw"
+          className="object-cover"
+        />
+      </div>
+
+      <div className="p-6">
+        <h3 className="text-3xl font-bold mb-4">
+          Fasadeskifer
         </h3>
 
         <p className="text-zinc-400">
-          Levering og montering for kunder
-          over hele landet.
+          Moderne og tidløse fasadeløsninger i naturstein.
+        </p>
+      </div>
+
+    </div>
+
+    {/* Uteområder */}
+    <div className="border border-zinc-800 rounded-xl overflow-hidden hover:border-white hover:-translate-y-2 transition duration-300">
+
+      <div className="relative h-60">
+        <Image
+          src="/images/uteomrader1.jpg"
+          alt="Uteområder"
+          fill
+          sizes="33vw"
+          className="object-cover"
+        />
+      </div>
+
+      <div className="p-6">
+        <h3 className="text-3xl font-bold mb-4">
+          Uteområder
+        </h3>
+
+        <p className="text-zinc-400">
+          Terrasser, trapper, hagemurer og utearealer i naturstein.
         </p>
       </div>
 
     </div>
 
   </div>
-
 </section>
+
+{/* PROSJEKTER */}
+
+<section
+  id="galleri"
+  className="max-w-7xl mx-auto px-6 py-18"
+>
+  <div className="text-center mb-14">
+    <h2 className="text-4xl font-bold mb-4">
+      Utvalgte prosjekter
+    </h2>
+
+    <p className="text-zinc-400 max-w-2xl mx-auto">
+      Eksempler på skiferprosjekter innen tak, fasader og uteområder.
+    </p>
+  </div>
+
+  <div className="grid md:grid-cols-3 gap-6">
+
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <Image
+        src="/images/tak1.jpg"
+        alt="Takskifer"
+        fill
+        sizes="33vw"
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-2xl font-bold">Takskifer</h3>
+      </div>
+    </div>
+
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <Image
+        src="/images/fasader1.jpg"
+        alt="Fasadeskifer"
+        fill
+        sizes="33vw"
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-2xl font-bold">Fasadeskifer</h3>
+      </div>
+    </div>
+
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <Image
+        src="/images/uteomrader1.jpg"
+        alt="Uteområder"
+        fill
+        sizes="33vw"
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-2xl font-bold">Uteområder</h3>
+      </div>
+    </div>
+
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <Image
+        src="/images/tak2.jpg"
+        alt="Takprosjekt"
+        fill
+        sizes="33vw"
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-2xl font-bold">Takprosjekt</h3>
+      </div>
+    </div>
+
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <Image
+        src="/images/fasader2.jpg"
+        alt="Naturstein"
+        fill
+        sizes="33vw"
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-2xl font-bold">Naturstein</h3>
+      </div>
+    </div>
+
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+      <Image
+        src="/images/fasader3.jpg"
+        alt="Skiferfasade"
+        fill
+        sizes="33vw"
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/45 transition duration-500" />
+      <div className="absolute bottom-6 left-6">
+        <h3 className="text-2xl font-bold">Skiferfasade</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+
    {/* KONTAKT */}
 
 <section
   id="kontakt"
   className="bg-zinc-950 py-24"
 >
-  <div className="max-w-4xl mx-auto px-6 text-center">
+  <div className="max-w-2xl mx-auto px-6 text-center">
 
     <h2 className="text-4xl font-bold mb-8">
       Kontakt oss
@@ -413,47 +438,66 @@ export default function Home() {
             <h3 className="text-xl font-bold mb-4">
               SKIFERHUS
             </h3>
-            <p className="text-gray-400">
-              Eksklusive skifer- og natursteinsløsninger for hele Norge.
-            </p>
+<p className="text-zinc-400 leading-7">
+  Vi leverer eksklusive løsninger i skifer og naturstein til private, bedrifter og entreprenører over hele Norge.
+</p>
           </div>
 
-          <div>
-            <h3 className="font-semibold mb-4">
-              Tjenester
-            </h3>
+    <div>
+  <h3 className="font-semibold mb-5 text-white">
+    Tjenester
+  </h3>
 
-            <ul className="space-y-2 text-gray-400">
-<li>Takskifer</li>
-<li>Fasadeskifer</li>
-<li>Terrasseskifer</li>
-            </ul>
-          </div>
+  <ul className="space-y-3 text-zinc-400">
+
+    <li>
+      <Link href="/produkter/takskifer" className="hover:text-white transition">
+        Takskifer
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/produkter/fasadeskifer" className="hover:text-white transition">
+        Fasadeskifer
+      </Link>
+    </li>
+
+    <li>
+      <Link href="/produkter/uteomrader" className="hover:text-white transition">
+        Uteområder
+      </Link>
+    </li>
+
+  </ul>
+</div>
 
 <div>
-  <h3 className="font-semibold mb-4">
+  <h3 className="font-semibold mb-5 text-white">
     Kontakt
   </h3>
 
-  <div className="space-y-3 text-gray-400">
+  <div className="space-y-4 text-zinc-400">
 
-    <p>
+    <a
+      href="mailto:post@skiferhus.no"
+      className="flex items-center gap-3 hover:text-white transition"
+    >
+      <span>✉</span>
+      <span>post@skiferhus.no</span>
+    </a>
 
-      <a href="mailto:post@skiferhus.no">
-       ✉ post@skiferhus.no
-</a>
-    </p>
+    <a
+      href="tel:+4794084593"
+      className="flex items-center gap-3 hover:text-white transition"
+    >
+      <span>☎</span>
+      <span>+47 940 84 593</span>
+    </a>
 
-    <p>
-      <a href="tel:+4794084593">
-        ☎ +47 940 84 593
-</a>
-
-    </p>
-
-    <p>
-      📍 Norge
-    </p>
+    <div className="flex items-center gap-3">
+      <span>📍</span>
+      <span>Hele Norge</span>
+    </div>
 
   </div>
 </div>
