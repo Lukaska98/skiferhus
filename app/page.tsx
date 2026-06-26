@@ -61,7 +61,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 text-center max-w-4xl px-6 -mt-12 md:-mt-16">
+        <div className="relative z-10 text-center max-w-4xl px-6 -mt-16 md:-mt-24">
 
 <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-100 mb-5">
   Skifer for generasjoner
