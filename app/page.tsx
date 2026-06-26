@@ -59,19 +59,19 @@ export default function Home() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
 
-        <div className="relative z-10 text-center max-w-4xl px-6">
+        <div className="relative z-10 text-center max-w-4xl px-6 -mt-12 md:-mt-16">
 
-<h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-gray-200">
+<h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-100 mb-5">
   Skifer for generasjoner
 </h1>
 
-<p className="text-xl md:text-2xl mb-6">
+<p className="text-lg md:text-xl text-gray-200 mb-6">
   Takskifer, fasadeskifer og naturstein levert med fokus på kvalitet og håndverk.
 </p>
 
-          <p className="text-gray-300 text-lg mb-10">
+          <p className="text-gray-400 text-base mb-12 tracking-wide">
             Tak • Fasader • Uteområder • Naturstein
           </p>
 
