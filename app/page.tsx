@@ -63,11 +63,11 @@ export default function Home() {
 
         <div className="relative z-10 text-center max-w-4xl px-6">
 
-<h1 className="text-5xl md:text-7xl font-bold mb-8">
+<h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-gray-200">
   Skifer for generasjoner
 </h1>
 
-<p className="text-xl md:text-2xl mb-6">
+<h1 className="max-w-3xl mx-auto text-5xl md:text-6xl font-semibold text-gray-200 leading-tight">
   Takskifer, fasadeskifer og naturstein levert med fokus på kvalitet og håndverk.
 </p>
 
