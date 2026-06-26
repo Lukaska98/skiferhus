@@ -63,7 +63,7 @@ export default function Home() {
 
         <div className="relative z-10 text-center max-w-4xl px-6 -mt-16 md:-mt-24">
 
-<h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white/90">
+<h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white/90 mb-6">
   Skifer for generasjoner
 </h1>
 
