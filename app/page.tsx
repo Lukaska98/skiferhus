@@ -67,7 +67,7 @@ export default function Home() {
   Skifer for generasjoner
 </h1>
 
-<h1 className="max-w-3xl mx-auto text-5xl md:text-6xl font-semibold text-gray-200 leading-tight">
+<p className="text-xl md:text-2xl mb-6">
   Takskifer, fasadeskifer og naturstein levert med fokus på kvalitet og håndverk.
 </p>
 
