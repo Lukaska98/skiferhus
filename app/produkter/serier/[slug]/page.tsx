@@ -2,39 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { newProductSeries } from "../../../data/product-series";
+import { slateCollections } from "../../../data/product-series";
 
 type SeriesPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-function getSeries(slug: string) {
-  return newProductSeries.find((series) => series.slug === slug);
+function getCollection(slug: string) {
+  return slateCollections.find((collection) => collection.slug === slug);
 }
 
 export function generateStaticParams() {
-  return newProductSeries.map((series) => ({ slug: series.slug }));
+  return slateCollections.map((collection) => ({ slug: collection.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: SeriesPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const series = getSeries(slug);
+  const collection = getCollection(slug);
 
   return {
-    title: series ? series.name : "Produktserie",
-    description: series
-      ? `${series.name} fra Skiferhus.`
-      : "Produktserie fra Skiferhus.",
+    title: collection ? collection.name : "Kolleksjon",
+    description: collection
+      ? `${collection.name} takskifer fra Skiferhus.`
+      : "Takskifer fra Skiferhus.",
   };
 }
 
-export default async function ProductSeriesPage({ params }: SeriesPageProps) {
+export default async function SlateCollectionPage({ params }: SeriesPageProps) {
   const { slug } = await params;
-  const series = getSeries(slug);
+  const collection = getCollection(slug);
 
-  if (!series) {
+  if (!collection) {
     notFound();
   }
 
@@ -52,29 +52,28 @@ export default async function ProductSeriesPage({ params }: SeriesPageProps) {
         </Link>
 
         <Link
-          href="/produkter"
+          href="/produkter/takskifer"
           className="inline-flex items-center gap-2 text-zinc-400 hover:text-white"
         >
-          ← Til produktoversikt
+          ← Til takskifer
         </Link>
       </div>
 
       <section className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8 md:p-12">
         <p className="text-sm font-semibold tracking-[0.2em] text-zinc-400 uppercase mb-5">
-          {series.category}
+          CUPA PIZARRAS
         </p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">{series.name}</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">{collection.name}</h1>
         <p className="max-w-2xl text-lg leading-8 text-zinc-400">
-          Vi oppdaterer denne produktsiden med produktinformasjon,
-          spesifikasjoner og referansebilder. Ta kontakt for veiledning om
-          løsningen som passer prosjektet ditt.
+          {collection.description} Kontakt oss for pris, tilgjengelighet og
+          bestilling.
         </p>
 
         <Link
-          href={`/kontakt?produkt=${encodeURIComponent(series.name)}`}
+          href={`/kontakt?produkt=${encodeURIComponent(collection.name)}`}
           className="inline-flex items-center mt-9 px-7 py-4 bg-white text-black rounded-lg font-semibold hover:bg-zinc-200 transition"
         >
-          Be om tilbud
+          Be om pris
         </Link>
       </section>
     </main>

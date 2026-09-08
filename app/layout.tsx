@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import FacebookPixel from "@/components/FacebookPixel";
@@ -19,28 +18,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.skiferhus.no"),
-
   title: {
-    default: "Skiferhus | Skifertak, fasader og uteområder",
+    default: "Skiferhus | Skifer til tak og fasade",
     template: "%s | Skiferhus",
   },
-
   description:
-    "Eksklusive skifer- og natursteinløsninger for hele Norge. Skifertak, fasader og uteområder.",
-
+    "Skiferhus selger utvalgt skifer fra STOUNLINE, RIO GRANDE og CUPA PIZARRAS.",
   alternates: {
     canonical: "/",
   },
-
   openGraph: {
-    title: "Skiferhus",
+    title: "Skiferhus | Skifer til tak og fasade",
     description:
-      "Eksklusive skifer- og natursteinløsninger for hele Norge.",
+      "Utvalgt skifer fra STOUNLINE, RIO GRANDE og CUPA PIZARRAS.",
     url: "https://www.skiferhus.no",
     siteName: "Skiferhus",
     locale: "no_NO",
     type: "website",
-
     images: [
       {
         url: "https://www.skiferhus.no/og-image.png",
@@ -50,33 +44,20 @@ export const metadata: Metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Skiferhus",
+    title: "Skiferhus | Skifer til tak og fasade",
     description:
-      "Eksklusive skifer- og natursteinløsninger for hele Norge.",
+      "Utvalgt skifer fra STOUNLINE, RIO GRANDE og CUPA PIZARRAS.",
     images: ["https://www.skiferhus.no/og-image.png"],
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="no">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
@@ -84,7 +65,6 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-K6HHSY29DN"
           strategy="afterInteractive"
         />
-
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -95,9 +75,7 @@ export default function RootLayout({
         </Script>
 
         <FacebookPixel />
-
         {children}
-
         <Analytics />
         <SpeedInsights />
       </body>

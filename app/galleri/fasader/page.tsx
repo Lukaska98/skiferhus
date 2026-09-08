@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
-  title: "Skiferfasader",
+  title: "Inspirasjon til fasadeskifer",
   description:
-    "Eksklusive fasadeløsninger i skifer og naturstein for boliger og næringsbygg.",
+    "Inspirasjonsbilder som viser skifer som fasademateriale.",
 };
 export default function FasaderPage() {
   return (
@@ -20,7 +20,7 @@ export default function FasaderPage() {
         </Link>
 
         <h1 className="text-5xl font-bold mb-12">
-          Fasader
+          Inspirasjon til fasadeskifer
         </h1>
 
         <div className="grid md:grid-cols-2 gap-6">

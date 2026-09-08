@@ -1,6 +1,6 @@
-import NaturalStoneGroupPage from "@/components/NaturalStoneGroupPage";
-import { rioGrandeGroup } from "../../data/product-series";
+import ProductGroupPage from "@/components/ProductGroupPage";
+import { productGroups } from "../../data/product-series";
 
 export default function RioGrandePage() {
-  return <NaturalStoneGroupPage group={rioGrandeGroup} />;
+  return <ProductGroupPage group={productGroups[1]} />;
 }

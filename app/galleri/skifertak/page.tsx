@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 export const metadata = {
-  title: "Uteområder i skifer",
+  title: "Inspirasjon til takskifer",
   description:
-    "Terrasser, trapper og uteområder bygget med skifer og naturstein.",
+    "Inspirasjonsbilder som viser skifer som takmateriale.",
 };
 export default function SkifertakPage() {
   return (

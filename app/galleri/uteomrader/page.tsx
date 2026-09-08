@@ -16,7 +16,7 @@ export default function uteomraderPage() {
         </Link>
 
         <h1 className="text-5xl font-bold mb-12">
-          Uteområder
+          Inspirasjon i skifer
         </h1>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -24,7 +24,7 @@ export default function uteomraderPage() {
           <div className="relative h-[400px]">
             <Image
               src="/images/uteomrader1.jpg"
-              alt="Uteområder"
+              alt="Skifer"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
@@ -34,7 +34,7 @@ export default function uteomraderPage() {
           <div className="relative h-[400px]">
             <Image
               src="/images/uteomrader2.jpg"
-              alt="Uteområder"
+              alt="Skifer"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
@@ -44,7 +44,7 @@ export default function uteomraderPage() {
           <div className="relative h-[400px]">
             <Image
               src="/images/uteomrader3.jpg"
-              alt="Uteområder"
+              alt="Skifer"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"
@@ -54,7 +54,7 @@ export default function uteomraderPage() {
           <div className="relative h-[400px]">
             <Image
               src="/images/uteomrader4.jpg"
-              alt="Uteområder  "
+              alt="Skifer"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
               className="object-cover rounded-xl"

@@ -1,133 +1,139 @@
-import Link from "next/link";
 import Image from "next/image";
-import { products } from "../../data/products";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { products } from "../../data/products";
+
+type ProductPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export function generateStaticParams() {
+  return products.map((product) => ({ slug: product.slug }));
+}
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
-
-  const product = products.find(
-    (p) => p.slug === slug
-  );
+  const product = products.find((item) => item.slug === slug);
 
   if (!product) {
-    return {
-      title: "Produkt ikke funnet | Skiferhus",
-    };
+    return { title: "Produkt ikke funnet" };
   }
 
   return {
-    title: `${product.name} | Skiferhus`,
+    title: product.name,
     description: product.description,
   };
 }
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = await params;
-
-  const product = products.find((p) => p.slug === slug);
+  const product = products.find((item) => item.slug === slug);
 
   if (!product) {
-    return <h1>Produkt ikke funnet</h1>;
+    notFound();
   }
 
+  const relatedProducts = products.filter(
+    (item) => item.collection === product.collection && item.slug !== product.slug
+  );
+
   return (
-    
-    <main className="max-w-6xl mx-auto px-10 py-16">
-        <div className="flex items-center justify-between mb-20">
+    <main className="max-w-6xl mx-auto px-6 py-16">
+      <div className="flex items-center justify-between mb-16">
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="Skiferhus"
+            width={220}
+            height={60}
+            priority
+          />
+        </Link>
 
-  <Link href="/">
-    <Image
-      src="/logo.svg"
-      alt="Skiferhus"
-      width={220}
-      height={60}
-      priority
-    />
-  </Link>
+        <Link
+          href={`/produkter/${product.collection === "STOUNLINE" ? "stounline" : "rio-grande"}`}
+          className="inline-flex items-center gap-2 text-zinc-400 hover:text-white"
+        >
+          ← Til kolleksjon
+        </Link>
+      </div>
 
-<Link
-  href="/produkter"
-  className="inline-flex items-center gap-2 text-zinc-400 hover:text-white"
->
-  ← Til produktoversikt
-</Link>
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={1200}
+            height={800}
+            className="rounded-2xl w-full h-[420px] object-cover"
+          />
+        ) : (
+          <div className="min-h-[420px] rounded-2xl border border-zinc-800 bg-zinc-950 p-8 flex flex-col justify-between">
+            <p className="text-sm font-semibold tracking-[0.2em] text-zinc-500 uppercase">
+              {product.collection}
+            </p>
+            <p className="text-2xl font-semibold text-zinc-300">{product.format}</p>
+          </div>
+        )}
 
-</div>
-<Image
-  src={product.image}
-  alt={product.name}
-  width={1200}
-  height={800}
-className="rounded-xl mb-8 w-full h-[450px] object-cover"
-/>
+        <div>
+          <p className="text-sm font-semibold tracking-[0.2em] text-zinc-400 uppercase mb-4">
+            {product.collection}
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold">{product.name}</h1>
+          <p className="mt-6 text-lg text-zinc-400 leading-8">{product.description}</p>
 
-      <h1 className="text-4xl font-bold">{product.name}</h1>
+          {product.format && (
+            <p className="mt-6 text-zinc-300">
+              <strong>Format:</strong> {product.format}
+            </p>
+          )}
 
-      <p className="mt-4">{product.description}</p>
-
-      <p className="mt-2">
-        Kategori: {product.category}
-      </p>
-      <div className="mt-6 space-y-2">
-  <p>
-    <strong>Farge:</strong> {product.color}
-  </p>
-
-  <p>
-    <strong>Tykkelse:</strong> {product.thickness}
-  </p>
-
-  <p>
-    <strong>Bruksområde:</strong> {product.usage}
-  </p>
-</div>
- <Link
-  href={`/kontakt?produkt=${encodeURIComponent(product.name)}`}
-  className="inline-flex items-center mt-8 px-8 py-4 bg-white text-black rounded-lg font-semibold"
->
-  Få tilbud
-</Link>
-
-<h2 className="text-2xl font-bold mt-16 mb-6">
-  Relaterte produkter
-</h2>
-
-<div className="grid md:grid-cols-3 gap-6">
-  {products
-    .filter((p) => p.slug !== product.slug)
-    .slice(0, 3)
-    .map((related) => (
-      <Link
-        key={related.slug}
-        href={`/produkter/${related.slug}`}
-        className="border border-zinc-700 rounded-xl overflow-hidden"
-      >
-        <Image
-          src={related.image}
-          alt={related.name}
-          width={600}
-          height={400}
-          className="w-full h-40 object-cover"
-        />
-      
-
-        <div className="p-4">
-          <h3 className="font-semibold">
-            {related.name}
-          </h3>
+          <Link
+            href={`/kontakt?produkt=${encodeURIComponent(product.name)}`}
+            className="inline-flex items-center mt-9 px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-zinc-200 transition"
+          >
+            Be om pris
+          </Link>
         </div>
-      </Link>
-    ))}
-</div>
+      </div>
+
+      {relatedProducts.length > 0 && (
+        <section className="mt-20">
+          <h2 className="text-2xl font-bold mb-7">Flere i kolleksjonen</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedProducts.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/produkter/${related.slug}`}
+                className="group rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden hover:border-zinc-500 transition"
+              >
+                {related.image ? (
+                  <Image
+                    src={related.image}
+                    alt={related.name}
+                    width={600}
+                    height={400}
+                    className="w-full h-40 object-cover group-hover:scale-105 transition duration-500"
+                  />
+                ) : (
+                  <div className="h-40 p-5 flex items-end bg-zinc-900">
+                    <p className="text-sm font-semibold tracking-[0.16em] text-zinc-400 uppercase">
+                      {related.format}
+                    </p>
+                  </div>
+                )}
+                <div className="p-5">
+                  <h3 className="font-semibold">{related.name}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

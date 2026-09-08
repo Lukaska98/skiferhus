@@ -1,11 +1,11 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import LeadEvent from "@/components/LeadEvent";
 
 export default function TakkPage() {
   return (
     <main className="max-w-4xl mx-auto px-6 py-20">
-<LeadEvent />
+      <LeadEvent />
       <div className="flex justify-center mb-16">
         <Link href="/">
           <Image
@@ -19,12 +19,10 @@ export default function TakkPage() {
       </div>
 
       <div className="text-center">
-        <h1 className="text-5xl font-bold mb-6">
-          Takk for henvendelsen!
-        </h1>
-
+        <h1 className="text-5xl font-bold mb-6">Takk for henvendelsen!</h1>
         <p className="text-zinc-400 mb-12">
-          Vi har mottatt forespørselen din og vil kontakte deg så snart som mulig.
+          Vi har mottatt prisforespørselen din og svarer med pris og
+          tilgjengelighet så snart som mulig.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -34,16 +32,11 @@ export default function TakkPage() {
           >
             Se produkter
           </Link>
-
-          <Link
-            href="/"
-            className="px-6 py-3 border border-zinc-700 rounded-lg"
-          >
+          <Link href="/" className="px-6 py-3 border border-zinc-700 rounded-lg">
             Til forsiden
           </Link>
         </div>
       </div>
-
     </main>
   );
 }

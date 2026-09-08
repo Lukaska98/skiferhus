@@ -1,98 +1,47 @@
-export type NaturalStoneGroup = {
+export type ProductGroup = {
   slug: string;
   name: string;
-  collection: string;
+  collection: "STOUNLINE" | "RIO GRANDE";
   description: string;
-  image: string;
+  image?: string;
 };
 
-export const stounlineGroup: NaturalStoneGroup = {
-  slug: "stounline",
-  name: "Stounline",
-  collection: "STONELINE",
-  description: "Et utvalg av naturstein med et moderne og tidløst uttrykk.",
-  image: "/images/stounline/stounline1.png",
+export const productGroups: ProductGroup[] = [
+  {
+    slug: "stounline",
+    name: "STOUNLINE",
+    collection: "STOUNLINE",
+    description: "Utvalgt skifer for fasade.",
+    image: "/images/stounline/stounline1.png",
+  },
+  {
+    slug: "rio-grande",
+    name: "RIO GRANDE",
+    collection: "RIO GRANDE",
+    description: "Utvalgt skifer i Long- og Vertical-format.",
+  },
+];
+
+export type SlateCollection = {
+  slug: string;
+  name: string;
+  description: string;
 };
 
-export const rioGrandeGroup: NaturalStoneGroup = {
-  slug: "rio-grande",
-  name: "RIO GRANDE",
-  collection: "RIO GRANDE",
-  description: "En egen natursteingruppe med varme farger og levende struktur.",
- image: "/images/rio-grande/rio-grande.jpg",
-};
-
-export const naturalStoneGroups = [stounlineGroup, rioGrandeGroup];
-
-export const newProductSeries = [
+export const slateCollections: SlateCollection[] = [
   {
-    slug: "natursteinsfliser",
-    name: "Natursteinsfliser",
-    category: "Fasade",
+    slug: "rhomb",
+    name: "RHOMB",
+    description: "Skiferkolleksjon fra CUPA PIZARRAS.",
   },
   {
-    slug: "skiferfliser",
-    name: "Skiferfliser",
-    category: "Fasade",
+    slug: "rectangulo",
+    name: "RECTANGULO",
+    description: "Skiferkolleksjon fra CUPA PIZARRAS.",
   },
   {
-    slug: "steinplater",
-    name: "Steinplater",
-    category: "Fasade",
+    slug: "cupa-pizarras",
+    name: "CUPA PIZARRAS",
+    description: "Skiferkolleksjoner for tak.",
   },
-  {
-    slug: "laminam-storformatfliser",
-    name: "LAMINAM storformatfliser",
-    category: "Fasade og interiør",
-  },
-  {
-    slug: "infinity-storformatfliser",
-    name: "INFINITY storformatfliser",
-    category: "Fasade og interiør",
-  },
-  {
-    slug: "fibersementplater",
-    name: "Fibersementplater",
-    category: "Fasade",
-  },
-  {
-    slug: "stounwood-wpc-fasadekledning",
-    name: "STOUNWOOD • WPC-fasadekledning",
-    category: "Fasade",
-  },
-  {
-    slug: "slate-lite-fleksibel-stein",
-    name: "SLATE LITE fleksibel stein",
-    category: "Fasade og interiør",
-  },
-  {
-    slug: "stounwood-terrace-solid",
-    name: 'STOUNWOOD TERRACE "Solid" terrasser',
-    category: "Uteområde",
-  },
-  {
-    slug: "klinker",
-    name: "Klinker",
-    category: "Fasade",
-  },
-  {
-    slug: "aluminiumslameller",
-    name: "Aluminiumslameller",
-    category: "Fasade",
-  },
-  {
-    slug: "mood-collection-stein",
-    name: "MOOD COLLECTION (stein)",
-    category: "Fasade og interiør",
-  },
-  {
-    slug: "klinkerstein",
-    name: "Klinkerstein",
-    category: "Fasade",
-  },
-  {
-    slug: "cupaclad-fasadesystem",
-    name: "CUPACLAD fasadesystem",
-    category: "Fasade",
-  },
-] as const;
+];

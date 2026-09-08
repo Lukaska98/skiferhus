@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
-import { naturalStoneGroups, newProductSeries } from "./data/product-series";
+import { productGroups, slateCollections } from "./data/product-series";
+import { products } from "./data/products";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -7,44 +8,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.skiferhus.no",
       lastModified: new Date(),
     },
-
     {
       url: "https://www.skiferhus.no/produkter",
       lastModified: new Date(),
     },
-
-    ...naturalStoneGroups.map((group) => ({
+    {
+      url: "https://www.skiferhus.no/produkter/fasadeskifer",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://www.skiferhus.no/produkter/takskifer",
+      lastModified: new Date(),
+    },
+    ...productGroups.map((group) => ({
       url: `https://www.skiferhus.no/produkter/${group.slug}`,
       lastModified: new Date(),
     })),
-
-    ...newProductSeries.map((series) => ({
-      url: `https://www.skiferhus.no/produkter/serier/${series.slug}`,
+    ...products.map((product) => ({
+      url: `https://www.skiferhus.no/produkter/${product.slug}`,
       lastModified: new Date(),
     })),
-
-    {
-      url: "https://www.skiferhus.no/tjenester",
+    ...slateCollections.map((collection) => ({
+      url: `https://www.skiferhus.no/produkter/serier/${collection.slug}`,
       lastModified: new Date(),
-    },
-
+    })),
     {
       url: "https://www.skiferhus.no/kontakt",
-      lastModified: new Date(),
-    },
-
-    {
-      url: "https://www.skiferhus.no/galleri/skifertak",
-      lastModified: new Date(),
-    },
-
-    {
-      url: "https://www.skiferhus.no/galleri/fasader",
-      lastModified: new Date(),
-    },
-
-    {
-      url: "https://www.skiferhus.no/galleri/uteomrader",
       lastModified: new Date(),
     },
   ];
